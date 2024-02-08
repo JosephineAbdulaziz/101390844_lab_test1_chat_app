@@ -16,5 +16,22 @@ app.post('/message', async (req, res) => {
         res.status(500).send(err.message);
     }
 });
+app.get('/message/:room', async (req, res) => {
+    const { room } = req.params; // Extract the room parameter from the request URL
+    
+    try {
+        // Find messages based on the room parameter
+        const messages = await Message.find({ room });
+
+        console.log("Messages found:", messages);
+        res.json(messages); // Send the messages as JSON response
+    } catch (err) {
+        console.error("Error occurred:", err);
+        res.status(500).json({ error: err.message }); // Send error response
+    }
+});
+
+
+
 
 module.exports = app;

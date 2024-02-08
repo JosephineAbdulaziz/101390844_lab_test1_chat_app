@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import Register from './components/Register';
 import JoinRoom from './components/JoinRoom';
 import Login from './components/Login';
+import Chat from './components/Chat'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,22 +25,13 @@ const router = createBrowserRouter([
     element:  <Login />,
   }, 
   {
-    path: "/joinroom",
+    path: "/joinroom/:username",
     element:  <JoinRoom/>,
   },
-  //  {
-  //   path: "/employees/add",
-  //   element:  <AddEmployee/>,
-  // }, {
-  //   path: "/employees/update/:id",
-  //   element:  <UpdateEmployee/>,
-  // }, {
-  //   path: "/employees/delete/:id",
-  //   element:  <DeleteEmployee/>,
-  // }, {
-  //   path: "/employees/view/:id",
-  //   element:  <ViewEmployee/>,
-  // }, 
+   {
+    path: "/chat/:username/:room",
+    element:  <Chat/>,
+  },
   
 ]);
 

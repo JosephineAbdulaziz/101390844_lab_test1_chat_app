@@ -38,7 +38,7 @@ export default function Login() {
         //after we log in 
         localStorage.setItem('loggedIn', 'true')
 
-       window.location.replace('/joinroom');
+        window.location.replace(`/joinroom/${formData.username}`);
 
       })
       .catch((error) => {
